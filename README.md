@@ -9,4 +9,3 @@ Automates Azure identity and access controls using Azure CLI and Bash.
 ```bash
 chmod +x iam_setup.sh && ./iam_setup.sh
 ```
-# iam-project
