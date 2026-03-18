@@ -22,7 +22,7 @@ jobs:
       - name: Set Azure Subscription
         run: |
           az account set --subscription ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-          echo "✅ Logged into Azure successfully"
+          echo " Logged into Azure successfully"
 
       - name: Make Script Executable
         run: chmod +x scripts/iam_setup.sh
@@ -33,7 +33,7 @@ jobs:
 
       - name: Confirm Deployment
         run: |
-          echo "✅ Pipeline run complete!"
+          echo " Pipeline run complete!"
           az group show \
             --name IAM-Project-RG \
             --query "{Name:name, Location:location, State:properties.provisioningState}" \
