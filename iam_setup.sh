@@ -85,9 +85,7 @@ az ad user create \
   --force-change-password-next-sign-in false
 echo " Test users created."
 
-echo "================================================"
 echo " STEP 7: Adding Users to Their Groups"
-echo "================================================"
 WEB_USER_ID=$(az ad user show --id "webadmin.test@$TENANT_DOMAIN" --query id -o tsv)
 DB_USER_ID=$(az ad user show  --id "dbadmin.test@$TENANT_DOMAIN"  --query id -o tsv)
 WEB_GROUP_ID=$(az ad group show --group $WEB_GROUP --query id -o tsv)
@@ -99,16 +97,16 @@ echo " Users added to groups."
 
 echo " STEP 8: Validating Role Assignments"
 
-echo "--- Role assignments for DBAdmins ---"
+echo " Role assignments for DBAdmins "
 az role assignment list \
   --assignee $DB_GROUP_ID \
   --scope $RG_SCOPE \
   --output table
 
-echo "--- Members of WebAdmins ---"
+echo " Members of WebAdmins "
 az ad group member list --group $WEB_GROUP --output table
 
-echo "--- Members of DBAdmins ---"
+echo " Members of DBAdmins "
 az ad group member list --group $DB_GROUP --output table
 
 echo ""
