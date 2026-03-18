@@ -3,7 +3,8 @@
 # IAM Roles and Secure Access Automation
 
 
-set -e
+set +e  
+export MSYS_NO_PATHCONV=1
 
 # VARIABLES
 RESOURCE_GROUP="IAM-Project-RG"
